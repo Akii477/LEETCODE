@@ -11,18 +11,27 @@ public:
 	int findKRotation(int arr[], int n) {
 	    // code here
 	    
-	   int min = INT_MAX;
-	   int min_index;
-	   for(int i =0; i<n; i++)
-	   {
-	       if(min>arr[i])
-	       {
-	           min = arr[i];
-	           min_index = i;
-	       }
-	   }
-	   
-	   return min_index;
+	  int start = 0;
+	  int end = n-1;
+	  
+	  while(start<=end)
+	  {
+	      int mid = start + (end-start)/2;
+	      
+	      if(arr[start]<=arr[end])
+	      {
+	          return start;
+	      }
+	      
+	      if(arr[start]>arr[mid])
+	      {
+	          end = mid;
+	      }
+	      else
+	      {
+	          start = mid+1;
+	      }
+	  }
 	}
 
 };
