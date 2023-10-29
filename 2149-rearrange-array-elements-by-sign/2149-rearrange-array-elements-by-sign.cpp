@@ -2,6 +2,8 @@ class Solution {
 public:
     vector<int> rearrangeArray(vector<int>& nums) {
         
+        
+        // pos eleement is on even index and negative element at index on odd in Output.
         int n = nums.size();
         vector<int>ans(n) ;
         int posIndex = 0 , negIndex = 1;
