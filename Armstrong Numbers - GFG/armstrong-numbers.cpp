@@ -9,20 +9,20 @@ class Solution {
   public:
     string armstrongNumber(int n){
         // code here
-        int dupNum=n;
-        int ans=0;
-        while(n!=0)
+        int OriginalNum = n;
+        int ans = 0;
+        
+        while(n>0)
         {
-            int rem=n%10;
-            
-            if(rem!=0)
+            int rem = n%10;
+            if( rem !=0)
             {
-                ans=ans+pow(rem,3);
+                ans = ans + pow(rem,3);
             }
-            n=n/10;
+            n /= 10;
         }
         
-        if(dupNum==ans)
+        if(OriginalNum == ans)
         {
             return "Yes";
         }
